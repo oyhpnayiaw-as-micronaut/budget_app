@@ -3,7 +3,5 @@ h1 App transactions
 #app_transactions
   - @app_transactions.each do |app_transaction|
     == render app_transaction
-    p
-      = link_to "Show this app transaction", app_transaction
 
-= link_to "New app transaction", new_app_transaction_path
+= link_to "New app transaction", new_category_app_transaction_path(params[:category_id])

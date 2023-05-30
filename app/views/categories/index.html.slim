@@ -2,7 +2,7 @@ h1 Categories
 
 #categories
   - @categories.each do |category|
-    = link_to category
+    = link_to category_app_transactions_path(category)
       == render category
 
 = link_to "New category", new_category_path
