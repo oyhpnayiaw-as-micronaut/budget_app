@@ -1,0 +1,8 @@
+.h-screen.flex.flex-col.items-center.justify-start.p-4.gap-4.text-center
+  .text-4xl.text-gray-700.font-bold.grow.flex.items-center.justify-center
+    = app_name
+
+  = link_to t('sign_in'), new_user_session_path, class: 'btn btn-primary w-full'
+
+  = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-ghost w-full'
+

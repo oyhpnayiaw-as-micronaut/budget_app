@@ -1,6 +1,10 @@
 module ApplicationHelper
+  def app_name
+    'Daisy'
+  end
+
   def title
-    base_title = 'Daisy'
+    base_title = app_name
 
     # get the current controller name
     controller_name = controller.controller_name
@@ -14,5 +18,13 @@ module ApplicationHelper
 
   def home?
     root_path == request.path
+  end
+
+  def simple_navbar?
+    %w[users].include?(request.path.split('/')[1])
+  end
+
+  def splash_screen?
+    %w[splash].include?(request.path.split('/')[1])
   end
 end

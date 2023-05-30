@@ -9,15 +9,17 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body.min-h-screen.container.max-w-md.mx-auto.md:border.border-gray-300.bg-gray-100
+  body.min-h-screen.container.max-w-md.mx-auto.md:border.border-gray-300.bg-gray-100.flex.flex-col
     = render "shared/navbar"
-    - if alert
-      .px-4.py-2
-        .alert.text-red-500.w-full
-          = alert
 
-    - if notice
-        .px-4.py-2.text-orange-500
-          = notice
-    main.p-4
+    - unless splash_screen?
+      - if alert
+        .px-4.py-2
+          .alert.text-red-500.w-full
+            = alert
+
+      - if notice
+          .px-4.py-2.text-orange-500
+            = notice
+    main
       = yield
