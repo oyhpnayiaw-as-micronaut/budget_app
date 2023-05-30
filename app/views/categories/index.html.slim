@@ -1,8 +1,10 @@
-h1 Categories
+h2.text-center.bg-primary.text-gray-200.p-2.text-lg
+  | Categories
 
-#categories
-  - @categories.each do |category|
-    = link_to category_app_transactions_path(category)
-      == render category
+.grow.p-2.flex.flex-col
+  .grow id="categories"
+    - @categories.each do |category|
+      = link_to category_app_transactions_path(category)
+        == render category
 
-= link_to "New category", new_category_path
+  = link_to "New category", new_category_path, class: "btn btn-primary btn-block my-2"

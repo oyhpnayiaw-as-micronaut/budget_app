@@ -5,4 +5,8 @@ class Category < ApplicationRecord
 
   has_many :category_app_transactions, dependent: :destroy
   has_many :app_transactions, through: :category_app_transactions
+
+  def total_amount
+    app_transactions.sum(:amount)
+  end
 end
