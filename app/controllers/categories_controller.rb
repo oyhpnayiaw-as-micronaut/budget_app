@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
-    @categories = Category.where(user: current_user).order(created_at: :desc)
+    @categories = Category.where(user: current_user).includes(%i[icon_attachment]).order(created_at: :desc)
   end
 
   # GET /categories/new
