@@ -15,3 +15,9 @@
     @apply w-full;
   }
 }
+
+@layer components {
+  .auth-btn {
+    @apply mt-2 btn btn-sm btn-primary w-full rounded-none text-xs;
+  }
+}
