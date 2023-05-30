@@ -1,8 +1,0 @@
-== render @app_transaction
-
-div
-  => link_to "Edit this app transaction", edit_app_transaction_path(@app_transaction)
-  '|
-  =< link_to "Back to app transactions", category_app_transactions_path
-
-  = button_to "Destroy this app transaction", @app_transaction, method: :delete
