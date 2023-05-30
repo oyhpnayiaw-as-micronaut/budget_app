@@ -1,18 +1,10 @@
-h2
-  | Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-  br
-  = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-  br
-  = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+  = f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: "Email", class: "mt-3"
+  = f.password_field :password, autocomplete: "current-password", required: true, placeholder: "Password"
+
   .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+    = f.submit "Log in", class: "mt-2 btn btn-sm btn-primary w-full rounded-none text-xs"
+
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  .pt-3.text-center.text-gray-600.text-sm 
+    = link_to "Forgot password?", new_password_path(resource_name), class: 'hover:text-gray-700 hover:underline'
