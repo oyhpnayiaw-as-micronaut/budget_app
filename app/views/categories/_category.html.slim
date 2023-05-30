@@ -2,7 +2,7 @@
   - if category.icon
     = image_tag category.icon, class: "rounded w-20 h-20 object-cover"
 
-  .flex.flex-col.gap-2.grow
+  .flex.flex-col.gap-1.grow
     p
       strong Name:
       =< category.name
@@ -10,3 +10,7 @@
       strong Amount:
       =< category.total_amount
 
+    hr
+
+    date.text-xs
+      | #{category.created_at.strftime("%B %d, %Y")}

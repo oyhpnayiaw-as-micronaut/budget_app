@@ -1,7 +1,11 @@
-h1 App transactions
+.px-2.py-4.flex.items-center.justify-between.bg-white.shadow-sm
+  strong Total Amount
+  span= number_to_currency(@total_amount)
 
-#app_transactions
-  - @app_transactions.each do |app_transaction|
-    == render app_transaction
+.grow.p-2
+  #app_transactions
+    - @app_transactions.each do |app_transaction|
+      == render app_transaction
 
-= link_to "New app transaction", new_category_app_transaction_path(params[:category_id])
+.p-2.bg-secondary
+  = link_to "Add a new transaction", new_category_app_transaction_path(params[:category_id]), class: "new-btn"

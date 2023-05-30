@@ -1,8 +1,8 @@
-.grow.flex.flex-col
-  .grow.p-2 id="categories"
+.grow.p-2
+  #categories
     - @categories.each do |category|
       = link_to category_app_transactions_path(category)
         == render category
 
 .p-2.bg-secondary
-  = link_to "New category", new_category_path, class: "new-btn"
+  = link_to "Add a new category", new_category_path, class: "new-btn"

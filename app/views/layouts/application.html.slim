@@ -13,13 +13,13 @@ html
     = render "shared/navbar"
 
     - unless splash_screen?
-      - if alert
-        .px-4.py-2
+      - if alert && !alert.empty?
+        .px-4.py-2.bg-white
           .alert.text-red-500.w-full
             = alert
 
-      - if notice
-          .px-4.py-2.text-orange-500
+      - if notice && !notice.empty?
+          .px-4.py-2.text-orange-500.bg-white
             = notice
     main.grow.flex.flex-col
       = yield
