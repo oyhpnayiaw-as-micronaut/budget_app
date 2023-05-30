@@ -10,7 +10,8 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "layer"
         ]
       }
     ],
@@ -20,6 +21,7 @@
         "ignoreAtRules": [
           "tailwind",
           "apply",
+          "layer",
           "variants",
           "responsive",
           "screen"
@@ -28,5 +30,12 @@
     ],
     "csstree/validator": true
   },
-  "ignoreFiles": ["build/**", "app/assets/builds/**", "dist/**", "**/reset*.css", "**/bootstrap*.css"]
+  "ignoreFiles": [
+    "build/**",
+    "public/assets/**",
+    "app/assets/builds/**",
+    "dist/**",
+    "**/reset*.css",
+    "**/bootstrap*.css"
+  ]
 }
