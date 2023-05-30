@@ -1,0 +1,10 @@
+h1 Editing app transaction
+
+== render "form", app_transaction: @app_transaction
+
+br
+
+div
+  => link_to "Show this app transaction", @app_transaction
+  '|
+  =< link_to "Back to app transactions", app_transactions_path
