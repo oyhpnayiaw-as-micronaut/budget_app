@@ -6,20 +6,15 @@
         - @app_transaction.errors.each do |error|
           li = error.full_message
 
-  div
-    = form.label :name, style: "display: block"
-    = form.text_field :name, required: true, autofocus: true
+  = form.text_field :name, required: true, autofocus: true, placeholder: "Transaction Name", class: "mt-2"
+  = form.text_field :amount, required: true, type: "number", placeholder: "Amount"
 
-  div
-    = form.label :amount, style: "display: block"
-    = form.text_field :amount, required: true, type: "number"
-
-  h2 Select Categories
-  div
+  h2.mx-2.mt-2.font-semibold.text-lg Select Categories
+  .flex.flex-wrap.gap-2.p-2
     - @categories.each do |category|
       div
-        = check_box_tag "app_transaction[category_ids][]", category.id, @app_transaction.categories.include?(category) || category.id.to_s == params[:category_id], id: "category-#{category.id}" 
-        = form.label category.name, for: "category-#{category.id}"
+        = check_box_tag "app_transaction[category_ids][]", category.id, @app_transaction.categories.include?(category) || category.id.to_s == params[:category_id], id: "category-#{category.id}", class: "cursor-pointer"
+        = form.label category.name, for: "category-#{category.id}", class: "ml-2 cursor-pointer"
 
   div
-    = form.submit
+    = form.submit "Create Transaction", class: "auth-btn"
