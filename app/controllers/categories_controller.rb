@@ -13,6 +13,8 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(**category_params, user: current_user)
 
+    authorize! :create, @category
+
     respond_to do |format|
       if @category.save
         format.html { redirect_to root_path, notice: 'Category was successfully created.' }

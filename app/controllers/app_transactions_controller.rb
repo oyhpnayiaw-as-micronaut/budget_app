@@ -1,9 +1,12 @@
 class AppTransactionsController < ApplicationController
   # GET /app_transactions or /app_transactions.json
   def index
-    category = Category.find(params[:category_id])
-    @total_amount = category.total_amount
-    @app_transactions = category.app_transactions.order(created_at: :desc)
+    @category = Category.find(params[:category_id])
+
+    authorize! :read, @category
+
+    @total_amount = @category.total_amount
+    @app_transactions = @category.app_transactions.order(created_at: :desc)
   end
 
   # GET /app_transactions/new
@@ -28,6 +31,8 @@ class AppTransactionsController < ApplicationController
 
     data = app_transaction_params.except(:category_ids)
     @app_transaction = AppTransaction.new(**data, user: current_user)
+
+    authorize! :create, @app_transaction
 
     respond_to do |format|
       if @app_transaction.save
