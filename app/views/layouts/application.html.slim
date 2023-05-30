@@ -9,10 +9,7 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body.min-h-screen.container.max-w-md.mx-auto.md:border.border-gray-300.bg-gray-50
+  body.min-h-screen.container.max-w-md.mx-auto.md:border.border-gray-300.bg-gray-100
     = render "shared/navbar"
-    p.notice= notice
-    p.alert= alert
-    main
-      .display
-        = yield
+    main.p-4
+      = yield
