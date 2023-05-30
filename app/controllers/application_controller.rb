@@ -9,12 +9,7 @@ class ApplicationController < ActionController::Base
 
     return if !user_signed_in? && request.path.split('/')[1] == 'users'
 
-    if notice == 'Signed out successfully.'
-      redirect_to :new_user_session, notice: 'Signed out successfully.'
-      return
-    end
-
-    redirect_to :splash
+    redirect_to :splash, notice: ''
   end
 
   def splash_controller?
