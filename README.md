@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-<h3><b>Blog App</b></h3>
+<h3><b>Daisy Budget App</b></h3>
 </div>
 
 # 📗 Table of Contents
@@ -10,7 +10,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  <!-- - [🚀 Live Demo](#live-demo) -->
+    <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -23,34 +23,31 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 Daisy Budget App <a name="about-project"></a>
 
-The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts
+Daisy Budget App is an app that helps you to manage your budget. You can create your category and transactions. You can also see your budget report.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - Ruby on Rails
-- PostgreSQL
-- RSpec
+- Slim template engine
+- DaisyUI(Taildwind CSS framework)
 
 ### Key Features <a name="key-features"></a>
 
 - **CRUD Operations**
-
 - **Authentication**
-
-- **API documentation**
+- **Authorization**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ### 🚀 Live Demo -->
-<!---->
-<!-- Coming soon -->
+### 🚀 Live Demo
+
+- [Live Demo Link](https://budget-app-zngj.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,29 +57,67 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need: ruby 2.7.0 and rails
+In order to run this project you need: `Ruby` and `Node.js` installed on your machine.
 
 ### Setup
 
 Clone the repo and open terminal in the project root directory
 
+
 ### Install
 
-Install this project with:
+1. <span style="color: red;">*Important*</span> Install Daisy UI first by running the following command:
+
+```sh
+npm install
+```
+> Note: Prefer `pnpm` over `npm` if you use `pnpm` as your package manager.
+
+2. Install `Ruby` dependencies by running the following command: <span style="color: red;">*Important*</span> You need to install `Daisy UI` first before installing `Ruby` dependencies.
 
 ```sh
 bundle install
 ```
 
-And Create `.env` file in the root directory add the configurations.
-You can use the `.env.example` file as a template.
+3. And Create `.env` file in the root directory add the configurations. You can use the `.env.example` file as a template.
+
+4. Create database and run migrations by running the following commands:
+
+```sh
+bundle exec rails db:create
+bundle exec rails db:migrate
+```
+
+#### For development
+> <span style="color: red;">You should build or watch the css before running the project.</span>
+
+To build css, execute the following command:
+
+```sh
+bundle exec rails tailwindcss:build
+```
+
+To watch css, execute the following command:
+
+```sh
+bundle exec rails tailwindcss:watch
+```
+> These will convert the `tailwindcss` to `css`.
 
 ### Usage
 
 To run the project, execute the following command:
 
 ```sh
-rails s
+bundle exec rails s
+```
+
+### Tests
+
+To run the tests, execute the following command:
+
+```sh
+bundle exec rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -99,7 +134,7 @@ rails s
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Live chat**
+- [ ] **Add search**
 
 - [ ] **User profile**
 
