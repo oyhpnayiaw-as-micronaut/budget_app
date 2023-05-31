@@ -1,6 +1,5 @@
 .flex.flex-row.card.w-full.bg-white.rounded.shadow.p-4.mb-2.gap-4 id="#{dom_id category}"
-  - if category.icon
-    = image_tag category.icon, class: "rounded w-20 h-20 object-cover"
+  = image_tag with_fallback_icon(category.icon), class: "rounded w-20 h-20 object-cover"
 
   .flex.flex-col.gap-1.grow
     p
