@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   private
 
   def custom_authenticate_user!
-    return if Rails.env.test?
+    if Rails.env.test?
+      sign_in User.first
+      return
+    end
 
     return if user_signed_in?
 
