@@ -156,7 +156,9 @@ If you like this project or find it useful, please consider giving it a ⭐️. 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Multiple resources online and Microverse.
+Original Design Link - [SnapScan-IOS](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
+Design by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
