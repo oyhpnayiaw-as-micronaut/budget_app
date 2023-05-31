@@ -1,0 +1,10 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: "Email", class: "mt-3"
+  = f.password_field :password, autocomplete: "current-password", required: true, placeholder: "Password"
+
+  .actions
+    = f.submit "Log in", class: "auth-btn"
+
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  .pt-3.text-center.text-gray-600.text-sm 
+    = link_to "Forgot password?", new_password_path(resource_name), class: 'hover:text-gray-700 hover:underline'

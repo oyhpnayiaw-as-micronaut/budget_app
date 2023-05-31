@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] {
+    border: none !important;
+    border-bottom: 1px solid #ccc !important;
+
+    @apply w-full;
+  }
+}
+
+@layer components {
+  .auth-btn {
+    @apply mt-2 btn btn-sm btn-primary w-full rounded-none text-xs no-animation;
+  }
+
+  .new-btn {
+    @apply btn btn-outline btn-block my-2 rounded border-white text-white;
+  }
+}

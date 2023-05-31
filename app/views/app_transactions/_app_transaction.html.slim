@@ -1,0 +1,11 @@
+.card.w-full.bg-white.rounded.shadow.p-3.mb-2 id="#{dom_id app_transaction}"
+  p
+    strong Name:
+    =< app_transaction.name
+  p.mb-2
+    strong Amount:
+    =< number_to_currency app_transaction.amount
+
+  hr
+  date.text-xs.mt-2
+    | #{app_transaction.created_at.strftime("%B %d, %Y")}

@@ -1,0 +1,20 @@
+= form_with(model: @app_transaction, url: category_app_transactions_path(params[:category_id])) do |form|
+  - if @app_transaction.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@app_transaction.errors.count, "error")} prohibited this app_transaction from being saved:"
+      ul
+        - @app_transaction.errors.each do |error|
+          li = error.full_message
+
+  = form.text_field :name, required: true, autofocus: true, placeholder: "Transaction Name", class: "mt-2"
+  = form.text_field :amount, required: true, type: "number", placeholder: "Amount"
+
+  h2.mx-2.mt-2.font-semibold.text-lg Select Categories
+  .flex.flex-wrap.gap-2.p-2
+    - @categories.each do |category|
+      div
+        = check_box_tag "app_transaction[category_ids][]", category.id, @app_transaction.categories.include?(category) || category.id.to_s == params[:category_id], id: "category-#{category.id}", class: "cursor-pointer"
+        = form.label category.name, for: "category-#{category.id}", class: "ml-2 cursor-pointer"
+
+  div
+    = form.submit "Create Transaction", class: "auth-btn"

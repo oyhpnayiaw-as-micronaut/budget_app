@@ -1,0 +1,5 @@
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "mt-2"
+  .actions
+    = f.submit "Send me reset password instructions", class: "auth-btn"
