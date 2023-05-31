@@ -8,8 +8,3 @@ one:
   name: One
   email: "one@email.com"
   encrypted_password: $2a$12$szmTBb4pJLzfTrnYMAWqmu8BXfdX.rmzsp25BhYVZPMTeAbT9qvgm 
-#
-two:
-  name: Two
-  email: "two@email.com"
-  encrypted_password: $2a$12$szmTBb4pJLzfTrnYMAWqmu8BXfdX.rmzsp25BhYVZPMTeAbT9qvgm
