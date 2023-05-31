@@ -112,6 +112,14 @@ To run the project, execute the following command:
 bundle exec rails s
 ```
 
+### Tests
+
+To run the tests, execute the following command:
+
+```sh
+bundle exec rspec
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
