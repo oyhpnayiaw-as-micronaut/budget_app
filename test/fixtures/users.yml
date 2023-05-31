@@ -4,8 +4,12 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+one: 
+  name: One
+  email: "one@email.com"
+  encrypted_password: $2a$12$szmTBb4pJLzfTrnYMAWqmu8BXfdX.rmzsp25BhYVZPMTeAbT9qvgm 
 #
-two: {}
-# column: value
+two:
+  name: Two
+  email: "two@email.com"
+  encrypted_password: $2a$12$szmTBb4pJLzfTrnYMAWqmu8BXfdX.rmzsp25BhYVZPMTeAbT9qvgm

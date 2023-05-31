@@ -2,12 +2,12 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    return unless user.present?
-
     if Rails.env.test?
       can :manage, :all
       return
     end
+
+    return unless user.present?
 
     can :read, Category, user_id: user.id
     can :create, Category, user_id: user.id
